@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #EEF8FF;
+}
+.content {
+    max-width: 1228px;
+    margin: auto;
+
+}
+
+.lang img {
+    height: 20px;
+}
+.lang {
+    border-right: 1px solid;
+}
+.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.mobile-menu {
+    z-index: 35;
+}
+
+.swiper {
+    max-height: 738px;
+}
+.button-block {
+    position: absolute;
+    top: 50%;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    z-index: 10;
+    display: flex;
+    max-width: 1228px;
+    justify-content: space-between;
+}
+
+.swiper-pagination {
+    width: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+    bottom: 40%!important;
+    right: 90px;
+}
+
+.swiper-slide p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+.swiper-button-prev {
+    position: relative!important;
+    height: 34px!important;
+    width: 34px!important;
+    border-radius: 50%;
+    background-color: white;
+    left: 0!important;
+}
+.swiper-button-next {
+    position: relative!important;
+    height: 34px!important;
+    width: 34px!important;
+    border-radius: 50%;
+    background-color: white;
+    right: 0!important;
+}
+.swiper-button-prev:after, .swiper-button-next:after{
+    color: #0C517F!important;
+    font-size: 16px!important;
+}
+.swiper-pagination-bullet-active {
+    background-color: white !important;
+    height: 100px!important;
+    border-radius: 20px!important;
+}
+.swiper-pagination-bullet {
+    background-color: white !important;
+    opacity: 1!important;
+}
+
+.dots span{
+    color: #0c517f;
+}
+@font-face {
+    font-family: 'oswald';
+    src: url('/fonts/Roboto-Black.ttf');
+}
+
+@media screen and (max-width: 769px) {
+    .button-block {
+        display: none;
+    }
+    .swiper-pagination {
+        display: none;
+    }
+}
