@@ -40,14 +40,32 @@
                 <p class="uppercase">{{__('TƏHLÜKƏSİZ ÖDƏNİŞ')}}</p>
             </div>
         </div>
-        <div class="content px-8">
+        <div class="content">
             <p class="uppercase text-center my-6 font-semibold text-[#0C517F] text-xl">{{__('кто мы')}}?</p>
             <div class="dots text-center">
                 <span> &#9642;</span>
                 <span> &#9642;</span>
                 <span> &#9642;</span>
             </div>
-            <p class="font-semibold text-[#0C517F]">{{$staticPart->who_am_i}}</p>
+            <p class="font-semibold text-center text-[#0C517F]">{{$staticPart->who_am_i}}</p>
+        </div>
+        <div class="content">
+            <p class="uppercase text-center my-6 font-semibold text-[#0C517F] text-xl">{{__('наши предложения')}}?</p>
+            <div class="dots text-center mb-4">
+                <span> &#9642;</span>
+                <span> &#9642;</span>
+                <span> &#9642;</span>
+            </div>
+            <div class="offers grid grid-cols-2 gap-4 md:grid-cols-4">
+                @include('components.our-offers.item', ['path' => asset('assets/images/offers/01.svg'), 'name' => __('Заграничные туры')])
+                @include('components.our-offers.item', ['path' => asset('assets/images/offers/02.svg'), 'name' => __('Внутренние туры')])
+                @include('components.our-offers.item', ['path' => asset('assets/images/offers/03.svg'), 'name' => __('Лечебные туры')])
+                @include('components.our-offers.item', ['path' => asset('assets/images/offers/04.svg'), 'name' => __('Транспортные услуги')])
+                @include('components.our-offers.item', ['path' => asset('assets/images/offers/05.svg'), 'name' => __('Встреча гостей')])
+                @include('components.our-offers.item', ['path' => asset('assets/images/offers/06.svg'), 'name' => __('Резервация отелей')])
+                @include('components.our-offers.item', ['path' => asset('assets/images/offers/07.svg'), 'name' => __('Оформление Визы')])
+                @include('components.our-offers.item', ['path' => asset('assets/images/offers/08.svg'), 'name' => __('VIP-услуги')])
+            </div>
         </div>
     </div>
 </section>
