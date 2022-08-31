@@ -1,7 +1,10 @@
-<section class="slider">
+<section class="slider relative">
+    <p class="hidden md:block text-center absolute z-10 w-full top-4 tex-lg text-white">
+        +994 55 2939597 /   +994 55 4419457    /   agency@eltur.az     /    incoming@eltur.az</p>
     <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
+
             <!-- Slides -->
             @foreach($slider as $s)
                 <div class="swiper-slide relative">
