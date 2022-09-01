@@ -18,6 +18,9 @@
 </div>
 @include('slider')
 <section class="about">
+    <div class="content">
+
+    </div>
     <div class="px-8 relative content -translate-y-6 z-20
          md:px-0">
         <div class="service drop-shadow-lg py-2 grid grid-cols-2 gap-4
@@ -68,6 +71,26 @@
             </div>
         </div>
     </div>
+</section>
+<section class="tour bg-white">
+    <div class="content">
+        @foreach($tourTypes as $t)
+            <div class="tour-type-item">
+                <p class="uppercase text-center my-6 font-semibold text-[#0C517F] text-xl">{{$t->name}}?</p>
+                <div class="dots text-center mb-4">
+                    <span> &#9642;</span>
+                    <span> &#9642;</span>
+                    <span> &#9642;</span>
+                </div>
+                <div class="md:grid md:grid-cols-4 md:gap-4">
+                    @foreach($t->tours as $tour)
+                        @include('components.tour.item', ['tour' => $tour])
+                    @endforeach
+                </div>
+            </div>
+        @endforeach
+    </div>
+
 </section>
 </body>
 </html>

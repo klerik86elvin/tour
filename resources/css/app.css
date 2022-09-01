@@ -93,6 +93,10 @@ body {
 .dots span{
     color: #0c517f;
 }
+
+.tour .item {
+    height: 520px;
+}
 @font-face {
     font-family: 'oswald';
     src: url('/fonts/Roboto-Black.ttf');

@@ -13,6 +13,11 @@ class TourType extends Model implements HasMedia
     use HasFactory, InteractsWithMedia, HasTranslations;
     public $translatable = ['name'];
 
+
+    public function tours()
+    {
+        return $this->hasMany(Tour::class);
+    }
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('main')->singleFile();

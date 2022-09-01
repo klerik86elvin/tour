@@ -8,7 +8,7 @@
             <!-- Slides -->
             @foreach($slider as $s)
                 <div class="swiper-slide relative">
-                    <img src="{{$s->getFirstMediaUrl('main')}}" alt="">
+                    <img class="w-full" src="{{$s->getFirstMediaUrl('main')}}" alt="">
                     <p class="text-2xl absolute uppercase font-bold text-white
                               md:text-4xl">{{$s->title}}</p>
                 </div>

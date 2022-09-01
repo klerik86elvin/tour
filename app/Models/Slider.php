@@ -22,4 +22,12 @@ class Slider extends Model implements HasMedia
     {
         $this->addMediaCollection('main')->singleFile();
     }
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+            ->width(300)
+            ->height(350)
+            ->sharpen(10);
+    }
+
 }

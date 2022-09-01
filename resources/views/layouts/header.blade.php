@@ -4,12 +4,12 @@
         <div class="hidden md:flex gap-[4.5rem] h-9">
             <div class="menu flex relative items-center gap-11 text-[#0C517F] ">
                 <a href="" class="uppercase active">{{__('о нас')}}</a>
-                <p onclick="openTourType()" class="uppercase cursor-pointer relative">
+                <a href="#" onclick="openTourType()" class="uppercase cursor-pointer relative">
                     {{__('туры')}}
                     <div class="hidden tours-type absolute bg-[#EEF8FF] text-[#0C517F] z-50 top-20">
                         @include('components.tour-types')
                     </div>
-                </p>
+                </a>
                 <a href="" class="uppercase">{{__('услуги')}}</a>
                 <a href="" class="uppercase">{{__('обратная связь')}}</a>
             </div>
