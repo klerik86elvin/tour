@@ -13,14 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <body class="">
-<div class="content">
-    @include('layouts/header')
-</div>
+@include('layouts/header')
 @include('slider')
-<section class="about">
-    <div class="content">
-
-    </div>
+<section class="about bg-[#EEF8FF]">
     <div class="px-8 relative content -translate-y-6 z-20
          md:px-0">
         <div class="service drop-shadow-lg py-2 grid grid-cols-2 gap-4
@@ -72,25 +67,55 @@
         </div>
     </div>
 </section>
-<section class="tour bg-white">
-    <div class="content">
-        @foreach($tourTypes as $t)
-            <div class="tour-type-item">
-                <p class="uppercase text-center my-6 font-semibold text-[#0C517F] text-xl">{{$t->name}}?</p>
-                <div class="dots text-center mb-4">
-                    <span> &#9642;</span>
-                    <span> &#9642;</span>
-                    <span> &#9642;</span>
-                </div>
-                <div class="md:grid md:grid-cols-4 md:gap-4">
-                    @foreach($t->tours as $tour)
-                        @include('components.tour.item', ['tour' => $tour])
-                    @endforeach
+@foreach($tourTypes as $t)
+    @if($loop->iteration === 2)
+        <section class="sale-tours relative  bg-[#EEF8FF]">
+            <div class="h-36 bg-[#0C517F] flex justify-center drop-shadow-lg">
+                <img class="h-20" src="{{asset('assets/images/sale-tours.png')}}" alt="">
+            </div>
+            <div class="content md:px-0">
+                @include('sale-tour-slider')
+            </div>
+        </section>
+    @else
+        <section class="tour bg-white m-0">
+            <div class="content px-8 md:px-0">
+                <div class="tour-type-item">
+                    <p class="uppercase text-center my-6 font-semibold text-[#0C517F] text-xl">{{$t->name}}</p>
+                    <div class="dots text-center mb-4">
+                        <span> &#9642;</span>
+                        <span> &#9642;</span>
+                        <span> &#9642;</span>
+                    </div>
+                    <div class="grid grid-cols-1 gap-y-8 md:grid md:grid-cols-4 md:gap-4">
+                        @foreach($t->tours as $tour)
+                            @include('components.tour.item', ['tour' => $tour])
+                        @endforeach
+                    </div>
+                    <div class="my-8 flex justify-center">
+                        <a class=" text-[#0C517F] text-sm font-medium uppercase border border-solid border-[#0C517F] rounded-lg py-3 px-7 hover:bg-[#EEF8FF]" href="">{{__('показать все')}}</a>
+                    </div>
                 </div>
             </div>
-        @endforeach
+        </section>
+    @endif
+@endforeach
+<section class="bg-[#EEF8FF]">
+    <div class="content px-8 md:px-0">
+        <p class="text-[#0C517F] text-center text-xl">{{__('мы работаем для Вас')}}</p>
+        <p class="text-[#0C517F] text-center text-xl font-bold uppercase">{{__('наша команда')}}</p>
+        <div class="dots text-center mb-4">
+            <span> &#9642;</span>
+            <span> &#9642;</span>
+            <span> &#9642;</span>
+        </div>
+        <div class="persons md:grid md:grid-cols-3 md:gap-4">
+            @foreach($persons as $p)
+                @include('components.person.item', ['person' => $p])
+            @endforeach
+        </div>
     </div>
-
 </section>
+@include('layouts.footer')
 </body>
 </html>

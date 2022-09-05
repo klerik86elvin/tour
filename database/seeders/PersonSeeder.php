@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Tour;
+use App\Models\Person;
 use Illuminate\Database\Seeder;
 
-class TourSeeder extends Seeder
+class PersonSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class TourSeeder extends Seeder
      */
     public function run()
     {
-        Tour::factory()->count(50)->create();
+        Person::factory()->count(20)->create();
     }
 }

@@ -47,7 +47,7 @@ class Slider extends Resource
             Images::make('image', 'main'),
             Translatable::make([
                 Text::make('title')
-            ])->locales(['az'])
+            ])
         ];
     }
 

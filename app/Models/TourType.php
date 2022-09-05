@@ -16,7 +16,7 @@ class TourType extends Model implements HasMedia
 
     public function tours()
     {
-        return $this->hasMany(Tour::class);
+        return $this->hasMany(Tour::class)->orderBy('id', 'DESC');
     }
     public function registerMediaCollections(): void
     {

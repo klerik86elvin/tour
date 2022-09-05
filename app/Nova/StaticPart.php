@@ -36,7 +36,7 @@ class StaticPart extends Resource
 
     public static function authorizedToCreate(Request $request)
     {
-        return false;
+        return \App\Models\StaticPart::all()->count() === 0;
     }
 
     public function authorizedToDelete(Request $request)

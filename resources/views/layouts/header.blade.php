@@ -1,5 +1,6 @@
-<header class="relative px-8 py-4 md:px-0">
-    <div class="flex justify-between items-center flex">
+<header class="bg-[#EEF8FF]">
+    <div class="content relative px-8 py-4 md:px-0">
+        <div class="flex justify-between items-center flex">
         <img class="h-16" src="{{asset('assets/images/logo.svg')}}" alt="">
         <div class="hidden md:flex gap-[4.5rem] h-9">
             <div class="menu flex relative items-center gap-11 text-[#0C517F] ">
@@ -81,6 +82,7 @@
             </div>
 
         </div>
+    </div>
     </div>
 </header>
 

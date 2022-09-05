@@ -4,13 +4,18 @@
     <div class="swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
-
             <!-- Slides -->
             @foreach($slider as $s)
                 <div class="swiper-slide relative">
                     <img class="w-full" src="{{$s->getFirstMediaUrl('main')}}" alt="">
-                    <p class="text-2xl absolute uppercase font-bold text-white
-                              md:text-4xl">{{$s->title}}</p>
+                    <div class="body">
+                        <p class="text-2xl  uppercase font-bold text-white
+                              md:text-7xl">{{$s->title}}</p>
+                        <div class="hidden mt-16 md:flex md:justify-center gap-4">
+                            <a class="uppercase w-52 py-4 font-bold border solid border-white rounded-lg text-white" href="">{{__('подробно')}}</a>
+                            <a class="uppercase w-52 py-4 font-bold text-[#0C517F] bg-white rounded-lg" href="">{{__('cвязаться с нами')}}</a>
+                        </div>
+                    </div>
                 </div>
             @endforeach
         </div>

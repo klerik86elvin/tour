@@ -60,7 +60,7 @@ class Tour extends Resource
                 Text::make('days')
             ]),
             Currency::make('price'),
-            DateTime::make('date')->format('d.m.Y')
+            DateTime::make('date')->format('DD.MM.Y')
         ];
     }
 

@@ -4,40 +4,31 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Nova\Http\Requests\InteractsWithLenses;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Translatable\HasTranslations;
 
-class Tour extends Model implements HasMedia
+class Person extends Model implements HasMedia
 {
-    use HasFactory, HasTranslations, InteractsWithMedia;
+    use HasFactory,  InteractsWithMedia, HasTranslations;
 
-    public $translatable = ['name', 'options', 'days'];
-
-    protected $casts = [
-        'date' => 'datetime:d.mm.Y', // Change your format
-    ];
+    public $translatable = ['name', 'position', 'text'];
 
     protected function asJson($value)
     {
         return json_encode($value, JSON_UNESCAPED_UNICODE);
     }
-
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this->addMediaConversion('thumb')
-            ->width(300)
-            ->height(350);
-    }
-
-    public function tourType()
-    {
-        return $this->belongsTo(TourType::class);
-    }
-
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('main')->singleFile();
+    }
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+            ->width(430)
+            ->height(400)
+            ->sharpen(10);
     }
 }

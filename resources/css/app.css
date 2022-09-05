@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    background-color: #EEF8FF;
+    /*background-color: #EEF8FF;*/
 }
 .content {
     max-width: 1228px;
@@ -52,7 +52,7 @@ body {
     right: 90px;
 }
 
-.swiper-slide p{
+.swiper .swiper-slide .body{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -60,7 +60,7 @@ body {
     width: 100%;
     text-align: center;
 }
-.swiper-button-prev {
+.swiper .swiper-button-prev {
     position: relative!important;
     height: 34px!important;
     width: 34px!important;
@@ -68,7 +68,7 @@ body {
     background-color: white;
     left: 0!important;
 }
-.swiper-button-next {
+.swiper .swiper-button-next {
     position: relative!important;
     height: 34px!important;
     width: 34px!important;
@@ -76,9 +76,15 @@ body {
     background-color: white;
     right: 0!important;
 }
-.swiper-button-prev:after, .swiper-button-next:after{
+.swiper .swiper-button-prev:after, .swiper .swiper-button-next:after{
     color: #0C517F!important;
     font-size: 16px!important;
+}
+
+.sale-tour-swiper .swiper-button-prev:after, .sale-tour-swiper .swiper-button-next:after{
+    color: #0C517F!important;
+    font-size: 20px!important;
+    font-weight: 800;
 }
 .swiper-pagination-bullet-active {
     background-color: white !important;
@@ -88,6 +94,35 @@ body {
 .swiper-pagination-bullet {
     background-color: white !important;
     opacity: 1!important;
+}
+.sale-tour-swiper {
+    overflow: hidden;
+    top: -40px;
+}
+.sale-tour-swiper .swiper-button-prev {
+    position: relative!important;
+    height: 34px!important;
+    width: 34px!important;
+    right: 0!important;
+}
+.sale-tour-swiper .swiper-button-next {
+    position: relative!important;
+    height: 34px!important;
+    width: 34px!important;
+    border-radius: 50%;
+    right: 0!important;
+}
+.sale-tour-swiper .swiper-button-prev:after {
+    position: absolute!important;
+    left: -5px;
+}
+.sale-tour-swiper .swiper-button-next:after {
+    position: absolute!important;
+    right: 0;
+}
+.sale-tour-swiper .swiper-slide img {
+    height: 320px;
+    width: 100%;
 }
 
 .dots span{
@@ -108,5 +143,8 @@ body {
     }
     .swiper-pagination {
         display: none;
+    }
+    .sale-tour-swiper .swiper-slide {
+        /*width: 320px!important;*/
     }
 }
