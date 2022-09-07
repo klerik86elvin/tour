@@ -14,7 +14,7 @@
                         </div>
                     </a>
                     <a href="{{route('service')}}" class="uppercase{{request()->segment(1) === 'service' ? ' active' : ''}}">{{__('услуги')}}</a>
-                    <a href="" class="uppercase">{{__('обратная связь')}}</a>
+                    <a href="{{route('contact-us')}}" class="uppercase{{request()->segment(1) === 'contact-us' ? ' active' : ''}}">{{__('обратная связь')}}</a>
                 </div>
                 <div class="flex">
                     <div class="lang pr-4 gap-2 text-sm flex items-center border-r-2 solid border-[#0C517F]">
@@ -76,7 +76,7 @@
                         </div>
                     </a>
                     <a href="{{route('service')}}" class="uppercase">{{__('услуги')}}</a>
-                    <a href="" class="uppercase">{{__('обратная связь')}}</a>
+                    <a href="{{route('contact-us')}}" class="uppercase">{{__('обратная связь')}}</a>
                     <div class="socials flex items-center gap-2">
                         <a href="">
                             <img src="{{asset('assets/images/lin-mob.svg')}}" alt="">

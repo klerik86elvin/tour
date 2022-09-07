@@ -7,7 +7,7 @@
 <section>
     <div class="h-24 md:h-48 relative flex justify-center items-center" style="background-image: url({{asset('assets/images/service-page-img.jpg')}});">
         <div class="label absolute w-full min-h-full bg-[#0C517F] opacity-75"></div>
-        <p class="text-white absolute text-2xl font-bold uppercase">{{__('услуги')}}</p>
+        <p class="text-white absolute text-2xl font-bold uppercase md:text-3xl">{{__('услуги')}}</p>
     </div>
 </section>
 <section class="bg-[#EEF8FF] py-4">

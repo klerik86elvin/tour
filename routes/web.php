@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/tour-type/{id}', [\App\Http\Controllers\TourTypeController::class, 'index'])->name('tour-type');
 Route::get('/service', [\App\Http\Controllers\ServiceController::class, 'index'])->name('service');
+Route::get('/contact-us', [\App\Http\Controllers\ContactUsController::class, 'index'])->name('contact-us');
+Route::post('/contact-us', [\App\Http\Controllers\ContactUsController::class, 'post'])->name('contact-us.post');
