@@ -18,11 +18,13 @@ class HomeController extends Controller
         $saleTours = Tour::take(4)->get();
         $slider = Slider::all();
         $staticPart = StaticPart::first();
-        $tourTypes = TourType::with('tours')->take(3)->get();
+        $tourTypesContent = TourType::with('tours')->take(3)->get();
+        $tourTypes = TourType::all();
         return view('welcome', [
             'slider' => $slider,
             'staticPart' => $staticPart,
             'tourTypes'=> $tourTypes,
+            'tourTypesContent'=> $tourTypesContent,
             'saleTours' => $saleTours,
             'persons' => $perosons
         ]);

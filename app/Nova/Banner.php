@@ -4,28 +4,24 @@ namespace App\Nova;
 
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Spatie\NovaTranslatable\Translatable;
 
-class TourType extends Resource
+class Banner extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\TourType::class;
+    public static $model = \App\Models\Banner::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -36,6 +32,15 @@ class TourType extends Resource
         'id',
     ];
 
+    public static function authorizedToCreate(Request $request)
+    {
+        return \App\Models\Banner::all()->count() === 0;
+    }
+
+    public function authorizedToDelete(Request $request)
+    {
+        return false;
+    }
     /**
      * Get the fields displayed by the resource.
      *
@@ -46,14 +51,7 @@ class TourType extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Translatable::make([
-                Text::make('name')
-            ]),
-            Translatable::make([
-                Textarea::make('text')
-            ]),
-            Images::make('icon', 'main'),
-            HasMany::make('tours','tours', Tour::class)
+            Images::make('image', 'main'),
         ];
     }
 

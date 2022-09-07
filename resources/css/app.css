@@ -14,10 +14,8 @@ body {
 .lang img {
     height: 20px;
 }
-.lang {
-    border-right: 1px solid;
-}
-.active {
+
+.menu .active {
     text-decoration: underline;
     font-weight: bold;
 }
@@ -132,6 +130,38 @@ body {
 .tour .item {
     height: 520px;
 }
+.tour-type-services .item {
+    width: 300px;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.tour-type-services .item .layer {
+   position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+}
+.tour-type-services .item p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+.pagination li.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(142,207,227,0.2);
+    border-radius: 50%;
+}
 @font-face {
     font-family: 'oswald';
     src: url('/fonts/Roboto-Black.ttf');
@@ -143,6 +173,10 @@ body {
     }
     .swiper-pagination {
         display: none;
+    }
+    .tour-type-services .item {
+        width: 171px;
+        height: 103px;
     }
     .sale-tour-swiper .swiper-slide {
         /*width: 320px!important;*/

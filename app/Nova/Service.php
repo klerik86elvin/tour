@@ -4,28 +4,27 @@ namespace App\Nova;
 
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Spatie\NovaTranslatable\Translatable;
 
-class TourType extends Resource
+class Service extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\TourType::class;
+    public static $model = \App\Models\Service::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -46,14 +45,13 @@ class TourType extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+            Images::make('icon', 'main'),
             Translatable::make([
                 Text::make('name')
             ]),
             Translatable::make([
                 Textarea::make('text')
-            ]),
-            Images::make('icon', 'main'),
-            HasMany::make('tours','tours', Tour::class)
+            ])
         ];
     }
 

@@ -1,18 +1,7 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-</head>
 <body class="">
+@include('layouts.head')
 @include('layouts/header')
 @include('slider')
 <section class="about bg-[#EEF8FF]">
@@ -67,7 +56,7 @@
         </div>
     </div>
 </section>
-@foreach($tourTypes as $t)
+@foreach($tourTypesContent as $t)
     @if($loop->iteration === 2)
         <section class="sale-tours relative  bg-[#EEF8FF]">
             <div class="h-36 bg-[#0C517F] flex justify-center drop-shadow-lg">
@@ -117,5 +106,6 @@
     </div>
 </section>
 @include('layouts.footer')
+
 </body>
 </html>
