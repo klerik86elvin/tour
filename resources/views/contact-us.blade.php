@@ -18,7 +18,7 @@
             <input class="bg-[#EEF8FF] p-2 @error('title') border border-solid border-red-500 @enderror" name="title" type="text" value="{{ old('title') }}" placeholder="{{__('Заголовок письма')}}"/>
 {{--            @error('title')--}}
 {{--            @enderror--}}
-            <input class="bg-[#EEF8FF] p-2 @error('email') border border-solid border-red-500 @enderror" name="mail" type="email" value="{{ old('email') }}" placeholder="{{__('Впишите ваш Электронный адрес')}}"/>
+            <input class="bg-[#EEF8FF] p-2 @error('mail') border border-solid border-red-500 @enderror" name="mail" type="email" value="{{ old('email') }}" placeholder="{{__('Впишите ваш Электронный адрес')}}"/>
             <textarea class="bg-[#EEF8FF] p-2 @error('text') border border-solid border-red-500 @enderror" name="text" id="" cols="30" rows="10" placeholder="{{__('Напишите письмо')}}">{{ old('text') }}</textarea>
             <input class="cursor-pointer text-white bg-[#0C517F] py-4 rounded-lg md:w-3/5 md:mx-auto" type="submit" value="{{__('Отправить')}}">
             <a class="text-center py-4 w-full text-[#0C517F] border border-solid border-[#0C517F] rounded-lg md:w-3/5 md:mx-auto" href="{{redirect()->back()}}">{{__('Назад')}}</a>

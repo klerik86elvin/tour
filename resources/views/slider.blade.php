@@ -12,8 +12,8 @@
                         <p class="text-2xl  uppercase font-bold text-white
                               md:text-7xl">{{$s->title}}</p>
                         <div class="hidden mt-16 md:flex md:justify-center gap-4">
-                            <a class="uppercase w-52 py-4 font-bold border solid border-white rounded-lg text-white" href="">{{__('подробно')}}</a>
-                            <a class="uppercase w-52 py-4 font-bold text-[#0C517F] bg-white rounded-lg" href="">{{__('cвязаться с нами')}}</a>
+                            <a class="uppercase w-52 py-4 font-bold border solid border-white text-white rounded-lg" href="{{route('about-us')}}">{{__('подробно')}}</a>
+                            <a class="uppercase w-52 py-4 font-bold text-[#0C517F] bg-white rounded-lg" href="{{route('contact-us')}}">{{__('cвязаться с нами')}}</a>
                         </div>
                     </div>
                 </div>

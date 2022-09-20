@@ -25,10 +25,10 @@
                 </div>
                 <div class="flex flex-col gap-4">
                     <div class="flex justify-center py-2 bg-[#0C517F] rounded-lg ">
-                        <a class="text-white text-center" href="">{{__('Написать письмо')}}</a>
+                        <a class="text-white text-center" href="{{route('contact-us')}}">{{__('Написать письмо')}}</a>
                     </div>
                     <div class="flex justify-center border py-2 border-solid border-[#0C517F] rounded-lg ">
-                        <a class="text-[#0C517F]" href="">{{__('Задать вопрос в WhatsApp')}}</a>
+                        <a class="text-[#0C517F]" href="https://wa.me/994555339488" target="_blank">{{__('Задать вопрос в WhatsApp')}}</a>
                     </div>
                 </div>
             </div>

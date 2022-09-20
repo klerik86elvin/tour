@@ -12,19 +12,19 @@
          md:flex md:justify-between md:px-20 md:py-8">
             <div class="service-item flex gap-2 justify-center">
                 <img src="{{asset('assets/images/service/01.svg')}}" alt="">
-                <p class="uppercase">{{__('100+ İSTİQAMƏTLƏR')}}</p>
+                <p class="uppercase">{{__('100+ направлений')}}</p>
             </div>
             <div class="service-item flex gap-2 justify-center">
                 <img src="{{asset('assets/images/service/02.svg')}}" alt="">
-                <p class="uppercase">{{__('SƏRFƏLİ QİYMƏTLƏR ')}}</p>
+                <p class="uppercase">{{__('Выгодные цены')}}</p>
             </div>
             <div class="service-item flex gap-2 justify-center">
                 <img src="{{asset('assets/images/service/03.svg')}}" alt="">
-                <p class="uppercase">{{__('SƏRFƏLİ QİYMƏTLƏR')}}</p>
+                <p class="uppercase">{{__('Онлайн Резервация')}}</p>
             </div>
             <div class="service-item flex gap-2 justify-center">
                 <img src="{{asset('assets/images/service/03.svg')}}" alt="">
-                <p class="uppercase">{{__('TƏHLÜKƏSİZ ÖDƏNİŞ')}}</p>
+                <p class="uppercase">{{__('Безопасная оплата')}}</p>
             </div>
         </div>
         <div class="content">
@@ -82,7 +82,7 @@
                         @endforeach
                     </div>
                     <div class="my-8 flex justify-center">
-                        <a class=" text-[#0C517F] text-sm font-medium uppercase border border-solid border-[#0C517F] rounded-lg py-3 px-7 hover:bg-[#EEF8FF]" href="">{{__('показать все')}}</a>
+                        <a class=" text-[#0C517F] text-sm font-medium uppercase border border-solid border-[#0C517F] rounded-lg py-3 px-7 hover:bg-[#EEF8FF]" href="{{route('tour-type', $t->id)}}">{{__('показать все')}}</a>
                     </div>
                 </div>
             </div>

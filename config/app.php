@@ -94,7 +94,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -177,6 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         \App\Providers\NovaServiceProvider::class,
+        \Froala\NovaFroalaField\FroalaFieldServiceProvider::class,
     ],
 
     /*

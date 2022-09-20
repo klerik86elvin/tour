@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58630cdbd8bb45aaf050424a9ecd4e9f",
+    "content-hash": "48e7dfb929a3e409ee1c3d22696a78a1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,6 +61,53 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.1.1"
             },
             "time": "2022-01-18T09:12:03+00:00"
+        },
+        {
+            "name": "benjacho/belongs-to-many-field",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Benjacho/belongs-to-many-field-nova.git",
+                "reference": "8b51d077fc0584f9ddabc852698a5d792ecae2da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Benjacho/belongs-to-many-field-nova/zipball/8b51d077fc0584f9ddabc852698a5d792ecae2da",
+                "reference": "8b51d077fc0584f9ddabc852698a5d792ecae2da",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Benjacho\\BelongsToManyField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Benjacho\\BelongsToManyField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "belongsToMany nova representation in field.",
+            "keywords": [
+                "Many to Many Field",
+                "belongsToMany",
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/Benjacho/belongs-to-many-field-nova/issues",
+                "source": "https://github.com/Benjacho/belongs-to-many-field-nova/tree/2.0"
+            },
+            "time": "2021-08-21T16:10:48+00:00"
         },
         {
             "name": "brick/math",
@@ -996,6 +1043,75 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "froala/nova-froala-field",
+            "version": "3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/froala/nova-froala-field.git",
+                "reference": "e31283a968a261c8e2f6c305b2274beb2472d620"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/nova-froala-field/zipball/e31283a968a261c8e2f6c305b2274beb2472d620",
+                "reference": "e31283a968a261c8e2f6c305b2274beb2472d620",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "league/flysystem": "^1.0.8",
+                "php": ">=7.1.3",
+                "spatie/image-optimizer": "^1.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.1",
+                "orchestra/testbench": "^3.8|^4.0",
+                "phpunit/phpunit": "^7.0|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Froala\\NovaFroalaField\\FroalaFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Froala\\NovaFroalaField\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Slava Razum",
+                    "email": "modern.web.artisan@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Nova Froala WYSIWYG Editor Field.",
+            "homepage": "https://github.com/froala/nova-froala-field",
+            "keywords": [
+                "editor",
+                "field",
+                "froala",
+                "laravel",
+                "nova",
+                "wysiwyg"
+            ],
+            "support": {
+                "issues": "https://github.com/froala/nova-froala-field/issues",
+                "source": "https://github.com/froala/nova-froala-field/tree/3.4.0"
+            },
+            "abandoned": true,
+            "time": "2021-01-18T18:28:59+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -3118,6 +3234,51 @@
                 "source": "https://github.com/opis/closure/tree/3.6.3"
             },
             "time": "2022-01-27T09:35:39+00:00"
+        },
+        {
+            "name": "ostheneo/nova-fields",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/OsTheNeo/NovaFields.git",
+                "reference": "7be3585b84148febfe7ecd7e93658eb168c54954"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/OsTheNeo/NovaFields/zipball/7be3585b84148febfe7ecd7e93658eb168c54954",
+                "reference": "7be3585b84148febfe7ecd7e93658eb168c54954",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "OsTheNeo\\NovaFields\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OsTheNeo\\NovaFields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/OsTheNeo/NovaFields/issues",
+                "source": "https://github.com/OsTheNeo/NovaFields/tree/1.1"
+            },
+            "time": "2022-05-06T10:03:54+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",
@@ -9540,5 +9701,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

@@ -6,7 +6,7 @@
             </a>
             <div class="hidden md:flex gap-[4.5rem] h-9">
                 <div class="menu flex relative items-center gap-11 text-[#0C517F] ">
-                    <a href="" class="uppercase{{request()->segment(1) === 'about-us' ? ' active' : ''}}">{{__('о нас')}}</a>
+                    <a href="{{route('about-us')}}" class="uppercase{{request()->segment(1) === 'about-us' ? ' active' : ''}}">{{__('о нас')}}</a>
                     <a href="#" onclick="openTourType()" class="uppercase cursor-pointer relative">
                         {{__('туры')}}
                         <div class="hidden tours-type absolute bg-[#EEF8FF] text-[#0C517F] z-50 top-20">
@@ -18,13 +18,13 @@
                 </div>
                 <div class="flex">
                     <div class="lang pr-4 gap-2 text-sm flex items-center border-r-2 solid border-[#0C517F]">
-                        <a href="">
+                        <a href="/lang/az">
                             <img src="{{asset('assets/images/az.svg')}}" alt="">
                         </a>
-                        <a href="">
+                        <a href="/lang/en">
                             <img src="{{asset('assets/images/en.svg')}}" alt="">
                         </a>
-                        <a href="">
+                        <a href="/lang/ru">
                             <img src="{{asset('assets/images/ru.svg')}}" alt="">
                         </a>
                     </div>

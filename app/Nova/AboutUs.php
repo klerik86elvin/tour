@@ -2,36 +2,38 @@
 
 namespace App\Nova;
 
-use Benjacho\BelongsToManyField\BelongsToManyField;
-use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
+use Froala\NovaFroalaField\Froala;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Currency;
-use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Spatie\NovaTranslatable\Translatable;
 
-class Tour extends Resource
+class AboutUs extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Tour::class;
+    public static $model = \App\Models\AboutUs::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
+
+    public static function authorizedToCreate(Request $request)
+    {
+        return \App\Models\AboutUs::all()->count() === 0;
+    }
+
+    public function authorizedToDelete(Request $request)
+    {
+        return true;
+    }
     /**
      * The columns that should be searched.
      *
@@ -49,33 +51,13 @@ class Tour extends Resource
      */
     public function fields(Request $request)
     {
+
+
         return [
             ID::make(__('ID'), 'id')->sortable(),
-            Images::make('image', 'main'),
-            BelongsTo::make('tour type', 'tourType', TourType::class),
-            BelongsTo::make('room type', 'roomType', RoomType::class),
-            BelongsTo::make('pax', 'pax', Pax::class),
             Translatable::make([
-                Text::make('name'),
-            ]),
-            Translatable::make([
-                Text::make('options'),
-            ]),
-            Translatable::make([
-                Textarea::make('inclusions')
-            ]),
-            Translatable::make([
-                Textarea::make('exclusions')
-            ]),
-            Translatable::make([
-                Text::make('days')
-            ]),
-            Currency::make('price'),
-            BelongsToManyField::make('hotels', 'hotels', 'App\Nova\Hotel')->optionsLabel(
-                'label'
-            ),
-            DateTime::make('date')->format('DD.MM.Y'),
-            HasMany::make('daily plan', 'dailyPlans', DailyPlan::class)
+                Froala::make('text')->withFiles('public'),
+            ])
         ];
     }
 

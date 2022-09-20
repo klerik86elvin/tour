@@ -16,9 +16,14 @@ class CreateToursTable extends Migration
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
             $table->integer('tour_type_id');
+            $table->integer('room_type_id');
+            $table->integer('pax_id');
             $table->text('name');
             $table->text('options');
+            $table->text('inclusions')->nullable();
+            $table->text('exclusions')->nullable();
             $table->text('days');
+            $table->text('conditions');
             $table->float('price',6, 2);
             $table->date('date');
             $table->timestamps();

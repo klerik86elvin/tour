@@ -2,35 +2,30 @@
 
 namespace App\Nova;
 
-use Benjacho\BelongsToManyField\BelongsToManyField;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Currency;
-use Laravel\Nova\Fields\Date;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Spatie\NovaTranslatable\Translatable;
 
-class Tour extends Resource
+class DailyPlanOption extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Tour::class;
+    public static $model = \App\Models\DailyPlanOption::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -52,30 +47,13 @@ class Tour extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
             Images::make('image', 'main'),
-            BelongsTo::make('tour type', 'tourType', TourType::class),
-            BelongsTo::make('room type', 'roomType', RoomType::class),
-            BelongsTo::make('pax', 'pax', Pax::class),
+            BelongsTo::make('daily plan', 'dailyPlan', DailyPlan::class),
             Translatable::make([
-                Text::make('name'),
+                Text::make('title')
             ]),
             Translatable::make([
-                Text::make('options'),
+                Textarea::make('text')
             ]),
-            Translatable::make([
-                Textarea::make('inclusions')
-            ]),
-            Translatable::make([
-                Textarea::make('exclusions')
-            ]),
-            Translatable::make([
-                Text::make('days')
-            ]),
-            Currency::make('price'),
-            BelongsToManyField::make('hotels', 'hotels', 'App\Nova\Hotel')->optionsLabel(
-                'label'
-            ),
-            DateTime::make('date')->format('DD.MM.Y'),
-            HasMany::make('daily plan', 'dailyPlans', DailyPlan::class)
         ];
     }
 

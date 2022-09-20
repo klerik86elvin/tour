@@ -1,4 +1,11 @@
 <?php return array (
+  'benjacho/belongs-to-many-field' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Benjacho\\BelongsToManyField\\FieldServiceProvider',
+    ),
+  ),
   'ebess/advanced-nova-media-library' => 
   array (
     'providers' => 
@@ -15,6 +22,13 @@
     'aliases' => 
     array (
       'Flare' => 'Facade\\Ignition\\Facades\\Flare',
+    ),
+  ),
+  'froala/nova-froala-field' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Froala\\NovaFroalaField\\FroalaFieldServiceProvider',
     ),
   ),
   'fruitcake/laravel-cors' => 
@@ -86,6 +100,13 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    ),
+  ),
+  'ostheneo/nova-fields' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'OsTheNeo\\NovaFields\\FieldServiceProvider',
     ),
   ),
   'spatie/laravel-medialibrary' => 
